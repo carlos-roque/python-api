@@ -11,9 +11,10 @@ services:
       - DEBUG=False
     restart: always
     volumes:
-      - type: bind
-        source: ./logs
-        target: /app/logs
+      - python_api_logs:/app/logs
+
+volumes:
+  python_api_logs:
 
 networks:
   default:
