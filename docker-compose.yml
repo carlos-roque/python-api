@@ -4,11 +4,13 @@ services:
   python-api:
     build: .
     ports:
-      - "5000:5000"
+      - "0.0.0.0:5000:5000"
     environment:
       API_TOKEN: 'carlos89-api-token'
       DEBUG: 'False'
     restart: always
+    volumes:
+      - ./logs:/app/logs
 
 networks:
   default:
