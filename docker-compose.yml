@@ -1,0 +1,15 @@
+version: '3.8'
+services:
+  # Python API service
+  python-api:
+    build: ./python-api
+    ports:
+      - "5000:5000"
+    environment:
+      API_TOKEN: 'carlos89-api-token'
+      DEBUG: 'False'
+    restart: always
+
+networks:
+  default:
+    driver: bridge 
