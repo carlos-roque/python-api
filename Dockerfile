@@ -6,8 +6,8 @@ WORKDIR /app
 COPY requirements.txt .
 RUN pip install --no-cache-dir -r requirements.txt
 
-# Copy the rest of the application
-COPY app/ .
+# Copy the app directory 
+COPY app/ ./app/
 
 # Set environment variables
 ENV PORT=5000
@@ -18,4 +18,4 @@ ENV DEBUG=False
 EXPOSE 5000
 
 # Command to run the application
-CMD ["gunicorn", "--bind", "0.0.0.0:5000", "main:app"] 
+CMD ["gunicorn", "--bind", "0.0.0.0:5000", "app.main:app"] 
