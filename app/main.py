@@ -8,16 +8,11 @@ import json
 
 app = Flask(__name__)
 
-# Configure logging to file
-LOG_DIR = '/app/logs'
-if not os.path.exists(LOG_DIR):
-    os.makedirs(LOG_DIR, exist_ok=True)
-
+# Configure logging to console only (no file)
 logging.basicConfig(
     level=logging.INFO,
     format='%(asctime)s - %(name)s - %(levelname)s - %(message)s',
     handlers=[
-        logging.FileHandler(os.path.join(LOG_DIR, 'api.log')),
         logging.StreamHandler()
     ]
 )

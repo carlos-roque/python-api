@@ -9,9 +9,6 @@ RUN pip install --no-cache-dir -r requirements.txt
 # Copy the app directory 
 COPY app/ ./app/
 
-# Create logs directory with appropriate permissions
-RUN mkdir -p /app/logs && chmod 777 /app/logs
-
 # Set environment variables
 ENV PORT=5000
 ENV API_TOKEN=carlos89-api-token

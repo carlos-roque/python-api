@@ -10,11 +10,6 @@ services:
       - API_TOKEN=carlos89-api-token
       - DEBUG=False
     restart: always
-    volumes:
-      - python_api_logs:/app/logs
-
-volumes:
-  python_api_logs:
 
 networks:
   default:
